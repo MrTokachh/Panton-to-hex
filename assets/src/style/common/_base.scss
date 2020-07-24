@@ -1,0 +1,86 @@
+html * {
+	box-sizing: border-box;
+}
+
+#wrapper {
+	position: relative;
+	overflow: hidden;
+	background-color: $white;
+}
+
+body {
+	min-width: 320px;
+	font-weight: 400;
+	font-family: $font-main;
+	color: $black;
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.3s ease;
+	color: $black;
+
+	&:hover {
+		text-decoration: none;
+		transition: all 0.3s ease;
+		color: $black;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0 0 10px;
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	margin: 0 0 10px;
+}
+
+ul,li,ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+input {
+  border: 0;
+	outline: 0;
+	
+	&[type="text"],&[type="password"],&[type="email"],&[type="search"] {
+		-webkit-appearance: none;
+	}
+}
+
+button {
+  border: 0;
+	outline: 0;
+	padding: 0;
+	background-color: unset;
+  cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
+	-webkit-appearance: none;
+}
+
+.container {
+  max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.img-bg {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
