@@ -7,26 +7,27 @@ jQuery(document).ready(function () {
 });
 
 function initColor() {
-  $('.colorpick').each(function () {
-    $(this).ColorPicker({
-      color: '#4E008E',
-      flat: true,
-      onChange: function (hsb, hex, rgb) {
-        var hexS = $(this).closest('.converter').find('.hex');
-        $(this).find('.colorpicker_hue div').css('backgroundColor', '#' + hex);
-        hexS.val(hex);
+  $('.colorpick').colorpickle({
+    showHex: false,
+    showSwatch: false,
+    onChange: function () {
+      $('.colorpick').each(function () {
+        var hexInput = $(this).closest('.converter').find('.hex');
+        var hexVal = $(this).data("colorpickle").hex
+        $(this).closest('.converter').find('.converter-color').css('backgroundColor', hexVal);
+        hexInput.val(hexVal.substr(1));
 
-        var hexV = hexS.val();
+        var hexA = hexInput.val();
         var p = 16;
-        var m = colorMatch(hexV, p);
+        var m = colorMatch(hexA, p);
         var m2 = m[0];
 
         if (m2 != '') {
           $(this).closest('.converter').find('.pantone').val(m2);
         }
-      }
-    });
-  })
+      })
+    }
+  });
 }
 
 function colorMatch(rgb, distance) {
