@@ -17,6 +17,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    p {
+      text-transform: uppercase;
+    }
 	}
 }
 
@@ -37,6 +41,5 @@
 
   &:focus {
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
-
   }
 }
